@@ -7,14 +7,16 @@
 // 
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./views/Home/Home.jsx";
+import Layout from "./views/Layout/Layout.jsx";
 
 export default function App() {
   return (
     <BrowserRouter>
-      {/* Layout component here */}
+      <Layout>
         <Switch>
           <Route exact path='/'>
-              {/* view component */}
+              <Home/>
           </Route>
           <Route path='/login'>
               {/* view component */}
@@ -35,7 +37,7 @@ export default function App() {
               {/* view component */}
           </Route>
         </Switch>
-      {/* Layout component here */}
+      </Layout>
     </BrowserRouter>
   )
 }
