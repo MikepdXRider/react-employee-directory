@@ -4,11 +4,12 @@
 // 
 
 import React from 'react'
+import ProfileForm from '../../components/Forms/ProfileForm.jsx'
 
 export default function CreateProfile() {
     return (
-        <div>
-            Create Profile Page
-        </div>
+        <section>
+            <ProfileForm/>
+        </section>
     )
 }
