@@ -8,11 +8,15 @@
 // 
 
 import { createContext, useState } from "react";
+import { getUser } from "../services/users.js";
 
 const authContext = createContext();
 
 function ProvideAuth({children}) {
-    const [user, setUser] = useState({email: 'email'});
+    const currentUser = getUser();
+    const [user, setUser] = useState(
+        currentUser ? {email: currentUser.email} : {}
+    );
 
     return (
         <authContext.Provider value={{user, setUser}} >
