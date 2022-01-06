@@ -3,7 +3,9 @@ import { useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth.jsx';
 import { signInUser, signUpUser } from '../../services/users.js';
 
-export default function AuthForm({isSigningUp=false}) {
+
+// This file might be able to be a view itself.
+export default function Auth({isSigningUp=false}) {
     const history = useHistory();
     const location = useLocation();
     const [emailInput, setEmailInput] = useState('');
@@ -33,6 +35,7 @@ export default function AuthForm({isSigningUp=false}) {
     }
 
     return (
+        // This could be an abstracted component, but isn't being reused.
         <fieldset>
             <legend>{isSigningUp ? 'Sign-Up' : 'Sign-In'}</legend>
             <form onSubmit={handleSubmit}>
