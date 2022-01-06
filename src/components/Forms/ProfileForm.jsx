@@ -21,6 +21,7 @@ export default function ProfileForm({isEdit=false}) {
 
     async function handleSubmit(e){
         e.preventDefault();
+        
         try {
             if(isEdit){
                 await updateProfile(nameInput, user.email, bioInput, birthdayInput);

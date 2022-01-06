@@ -13,6 +13,7 @@ export default function AuthForm({isSigningUp=false}) {
     async function handleSubmit(e){
         e.preventDefault();
         if (passwordInput.length < 8) setError('Password must be at least 8 characters long');
+
         try{
             if (isSigningUp) {
                 const currentUser = await signUpUser(emailInput, passwordInput);
@@ -34,9 +35,12 @@ export default function AuthForm({isSigningUp=false}) {
             <form onSubmit={handleSubmit}>
                 <label htmlFor="email">Email</label>
                 <input type="email" id="email" value={emailInput} onChange={(e) => setEmailInput(e.target.value)} required/>
+
                 <label htmlFor="password">Password</label>
                 <input type="password" id="password" value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} required/>
+
                 <input aria-label='submit form button' type="submit" />
+                
                 {
                     error && <p>{error}</p>
                 }
