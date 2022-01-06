@@ -2,15 +2,15 @@ import React from 'react'
 import { useState } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth.jsx';
+import { signOutUser } from '../../services/users.js';
 
 export default function Layout({ children }) {
     const history = useHistory();
     
     const { user, setUser } = useAuth();
     
-    // Temporary Mocks
-    function handleLogout() {
-        // This needs to be an async call to signout the user from useAuth hook
+    async function handleLogout() {
+        await signOutUser();
         setUser({});
     }
 
