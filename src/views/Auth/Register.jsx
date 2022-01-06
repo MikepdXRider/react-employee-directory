@@ -8,11 +8,12 @@
 // 
 
 import React from 'react'
+import AuthForm from '../../components/Forms/AuthForm.jsx'
 
 export default function Register() {
     return (
-        <div>
-            Register Page
-        </div>
+        <section>
+            <AuthForm isSigningUp={true}/>
+        </section>
     )
 }
