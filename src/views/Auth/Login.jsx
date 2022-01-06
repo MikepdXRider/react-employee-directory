@@ -7,3 +7,13 @@
 //  - The password should be 8+ characters long
 //  - STRETCH: If a field is empty or the password isn’t long enough, an error message should be displayed to the user
 // 
+
+import React from 'react'
+
+export default function Login() {
+    return (
+        <div>
+            Login Page
+        </div>
+    )
+}

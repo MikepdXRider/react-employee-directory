@@ -7,8 +7,14 @@
 // 
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Login from "./views/Auth/Login.jsx";
+import Register from "./views/Auth/register.jsx";
+import register from "./views/Auth/register.jsx";
 import Home from "./views/Home/Home.jsx";
 import Layout from "./views/Layout/Layout.jsx";
+import CreateProfile from "./views/Profile/CreateProfile.jsx";
+import EditProfile from "./views/Profile/EditProfile.jsx";
+import Profile from "./views/Profile/Profile.jsx";
 
 export default function App() {
   return (
@@ -19,22 +25,22 @@ export default function App() {
               <Home/>
           </Route>
           <Route path='/login'>
-              {/* view component */}
+              <Login/>
           </Route>
           <Route path='/register'>
-              {/* view component */}
+              <Register/>
           </Route>
           {/* will be private */}
           <Route path='/create-profile'>
-              {/* view component */}
+              <CreateProfile/>
           </Route>
           {/* will be private */}
           <Route path='/edit-profile'>
-              {/* view component */}
+              <EditProfile/>
           </Route>
           {/* will be private */}
           <Route path='/profile'>
-              {/* view component */}
+              <Profile/>
           </Route>
         </Switch>
       </Layout>
