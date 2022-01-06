@@ -32,8 +32,8 @@ Acme Inc. has hired you to build the company’s Employee Directory app. Acme em
 
 **Note: This app depends on Supabase and React Router. You’ll need to run npm i for the following packages after setting up your project**
 
-- @supabase/supabase-js
-- react-router-dom
+- @supabase/supabase-js (npm i @supabase/supabase-js react-router-dom@5)
+- react-router-dom (npm i react-router-dom)
 
 ### Acceptance Criteria
 You will need to create an app that provides the following features:
