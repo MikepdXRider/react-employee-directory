@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth.jsx';
 import { signInUser, signUpUser } from '../../services/users.js';
 
 export default function AuthForm({isSigningUp=false}) {
     const history = useHistory();
+    const location = useLocation();
     const [emailInput, setEmailInput] = useState('');
     const [passwordInput, setPasswordInput] = useState('');
     const [error, setError] = useState('');
     const { setUser } = useAuth();
+
+    const { from } = location.state || { from: '/profile' };
 
     async function handleSubmit(e){
         e.preventDefault();
@@ -22,7 +25,7 @@ export default function AuthForm({isSigningUp=false}) {
             } else {
                 const currentUser= await signInUser(emailInput, passwordInput);
                 setUser(currentUser);
-                history.replace('/profile');
+                history.replace(from);
             }
         } catch(err) {
             console.log(err);
@@ -46,5 +49,6 @@ export default function AuthForm({isSigningUp=false}) {
                 }
             </form>
         </fieldset>
+
     )
 }
