@@ -5,4 +5,5 @@
 // This functional component takes in children and ...rest
 // It returns a route
 //      - said route has a render attribute which will render children or redirect user to auth route depending on user/auth state.
+//          - send the current location to the redirect.
 // 
