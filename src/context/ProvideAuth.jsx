@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { getUser } from "../services/users.js";
+import { getUser, signInUser, signOutUser, signUpUser } from "../services/users.js";
 
 const authContext = createContext();
 
@@ -13,9 +13,23 @@ function ProvideAuth({children}) {
     );
 
     //  a fn that's passed to provider children, that called backend/service fn.
+    async function signUp(email, password) {
+        const newUser = await signUpUser(email, password);
+        setUser(newUser);
+    }
+
+    async function signIn(email, password) {
+        const newUser = await signInUser(email, password);
+        setUser(newUser);
+    }
+
+    async function signOut(email, password) {
+        await signOutUser();
+        setUser({});
+    }
 
     return (
-        <authContext.Provider value={{user, setUser}} >
+        <authContext.Provider value={{user, signUp, signIn, signOut}} >
             {children}
         </authContext.Provider>
     )

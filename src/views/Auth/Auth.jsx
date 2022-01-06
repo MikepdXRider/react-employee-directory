@@ -1,17 +1,15 @@
 import React, { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth.jsx';
-import { signInUser, signUpUser } from '../../services/users.js';
 
 
-// This file might be able to be a view itself.
 export default function Auth({isSigningUp=false}) {
     const history = useHistory();
     const location = useLocation();
     const [emailInput, setEmailInput] = useState('');
     const [passwordInput, setPasswordInput] = useState('');
     const [error, setError] = useState('');
-    const { setUser } = useAuth();
+    const { signIn, signUp } = useAuth();
 
     const { from } = location.state || { from: '/profile' };
 
@@ -21,12 +19,10 @@ export default function Auth({isSigningUp=false}) {
 
         try{
             if (isSigningUp) {
-                const currentUser = await signUpUser(emailInput, passwordInput);
-                setUser(currentUser);
+                await signUp(emailInput, passwordInput);
                 history.replace('/create-profile');
             } else {
-                const currentUser= await signInUser(emailInput, passwordInput);
-                setUser(currentUser);
+                await signIn(emailInput, passwordInput);
                 history.replace(from);
             }
         } catch(err) {
@@ -35,7 +31,7 @@ export default function Auth({isSigningUp=false}) {
     }
 
     return (
-        // This could be an abstracted component, but isn't being reused.
+        // This could be an abstracted into presentational component, but isn't being reused so it's not necessary.
         <fieldset>
             <legend>{isSigningUp ? 'Sign-Up' : 'Sign-In'}</legend>
             <form onSubmit={handleSubmit}>

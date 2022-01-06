@@ -1,11 +1,3 @@
-// 
-// App.js
-// Import react router dom and necessary parts
-// Set up BrowserRouter, switch, routes
-// Create and import PrivateRoute component
-// Wrap appropriate components in PrivateRoute component
-// 
-
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ProvideAuth } from "./context/ProvideAuth.jsx";
 import Home from "./views/Home/Home.jsx";
