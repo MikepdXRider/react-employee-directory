@@ -1,6 +1,5 @@
 import React from 'react'
-import { useState } from 'react';
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth.jsx';
 import { signOutUser } from '../../services/users.js';
 
