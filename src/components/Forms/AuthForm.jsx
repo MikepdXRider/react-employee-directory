@@ -13,15 +13,18 @@ export default function AuthForm({isSigningUp=false}) {
     async function handleSubmit(e){
         e.preventDefault();
         if (passwordInput.length < 8) setError('Password must be at least 8 characters long');
-        
-        if (isSigningUp) {
-            const currentUser = await signUpUser(emailInput, passwordInput);
-            setUser(currentUser);
-            history.replace('/create-profile');
-        } else {
-            const currentUser= await signInUser(emailInput, passwordInput);
-            setUser(currentUser);
-            history.replace('/profile');
+        try{
+            if (isSigningUp) {
+                const currentUser = await signUpUser(emailInput, passwordInput);
+                setUser(currentUser);
+                history.replace('/create-profile');
+            } else {
+                const currentUser= await signInUser(emailInput, passwordInput);
+                setUser(currentUser);
+                history.replace('/profile');
+            }
+        } catch(e) {
+            console.log(e.message);
         }
     }
 
