@@ -7,6 +7,7 @@
 // 
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { ProvideAuth } from "./context/ProvideAuth.jsx";
 import Login from "./views/Auth/Login.jsx";
 import Register from "./views/Auth/register.jsx";
 import register from "./views/Auth/register.jsx";
@@ -18,32 +19,34 @@ import Profile from "./views/Profile/Profile.jsx";
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Layout>
-        <Switch>
-          <Route exact path='/'>
-              <Home/>
-          </Route>
-          <Route path='/login'>
-              <Login/>
-          </Route>
-          <Route path='/register'>
-              <Register/>
-          </Route>
-          {/* will be private */}
-          <Route path='/create-profile'>
-              <CreateProfile/>
-          </Route>
-          {/* will be private */}
-          <Route path='/edit-profile'>
-              <EditProfile/>
-          </Route>
-          {/* will be private */}
-          <Route path='/profile'>
-              <Profile/>
-          </Route>
-        </Switch>
-      </Layout>
-    </BrowserRouter>
+    <ProvideAuth>
+      <BrowserRouter>
+        <Layout>
+          <Switch>
+            <Route exact path='/'>
+                <Home/>
+            </Route>
+            <Route path='/login'>
+                <Login/>
+            </Route>
+            <Route path='/register'>
+                <Register/>
+            </Route>
+            {/* will be private */}
+            <Route path='/create-profile'>
+                <CreateProfile/>
+            </Route>
+            {/* will be private */}
+            <Route path='/edit-profile'>
+                <EditProfile/>
+            </Route>
+            {/* will be private */}
+            <Route path='/profile'>
+                <Profile/>
+            </Route>
+          </Switch>
+        </Layout>
+      </BrowserRouter>
+    </ProvideAuth>  
   )
 }

@@ -12,22 +12,24 @@
 import React from 'react'
 import { useState } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth.jsx';
 
 export default function Layout({ children }) {
     const history = useHistory();
     
     // destructure user from useAuth hook
+    const { user, setUser } = useAuth();
     
-    // Temporary Mock
-    let mockUser = {
-        name: 'bobby',
-        birthday: new Date(),
-        bio: 'brief bio',
-        email: 'bobby@acme.com'
-    }
-    // Temporary Mock
-    const [user, setUser] = useState(mockUser);
-
+    // // Temporary Mock
+    // let mockUser = {
+    //     name: 'bobby',
+    //     birthday: new Date(),
+    //     bio: 'brief bio',
+    //     email: 'bobby@acme.com'
+    // }
+    // // Temporary Mock
+    // const [user, setUser] = useState(mockUser);
+    // Temporary Mocks
     function handleLogout() {
         setUser({});
     }
