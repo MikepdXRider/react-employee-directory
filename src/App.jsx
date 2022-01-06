@@ -16,6 +16,7 @@ import Layout from "./views/Layout/Layout.jsx";
 import CreateProfile from "./views/Profile/CreateProfile.jsx";
 import EditProfile from "./views/Profile/EditProfile.jsx";
 import Profile from "./views/Profile/Profile.jsx";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute.jsx";
 
 export default function App() {
   return (
@@ -32,18 +33,15 @@ export default function App() {
             <Route path='/register'>
                 <Register/>
             </Route>
-            {/* will be private */}
-            <Route path='/create-profile'>
+            <PrivateRoute path='/create-profile'>
                 <CreateProfile/>
-            </Route>
-            {/* will be private */}
-            <Route path='/edit-profile'>
+            </PrivateRoute>
+            <PrivateRoute path='/edit-profile'>
                 <EditProfile/>
-            </Route>
-            {/* will be private */}
-            <Route path='/profile'>
+            </PrivateRoute>
+            <PrivateRoute path='/profile'>
                 <Profile/>
-            </Route>
+            </PrivateRoute>
           </Switch>
         </Layout>
       </BrowserRouter>
