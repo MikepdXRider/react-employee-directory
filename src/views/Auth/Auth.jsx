@@ -15,7 +15,7 @@ export default function Auth({isSigningUp=false}) {
 
     async function handleSubmit(e){
         e.preventDefault();
-        if (passwordInput.length < 8) setError('Password must be at least 8 characters long');
+        if (passwordInput.length < 8) return setError('Password must be at least 8 characters long');
 
         try{
             if (isSigningUp) {

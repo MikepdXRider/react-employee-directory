@@ -12,7 +12,6 @@ function ProvideAuth({children}) {
         currentUser ? {email: currentUser.email} : {}
     );
 
-    //  a fn that's passed to provider children, that called backend/service fn.
     async function signUp(email, password) {
         const newUser = await signUpUser(email, password);
         setUser(newUser);
@@ -23,7 +22,7 @@ function ProvideAuth({children}) {
         setUser(newUser);
     }
 
-    async function signOut(email, password) {
+    async function signOut() {
         await signOutUser();
         setUser({});
     }

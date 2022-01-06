@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth.jsx'
 import { createProfile, getProfile, updateProfile } from '../../services/profile.js';
 
-export default function ProfileForm({isEdit=false}) {
+export default function SetProfile({isEdit=false}) {
     const history = useHistory();
     const {user} = useAuth();
     const [nameInput, setNameInput] = useState('');
@@ -12,6 +12,7 @@ export default function ProfileForm({isEdit=false}) {
 
     useEffect(async () => {
         if(isEdit){
+            // consider abstracting this out into a hook/context
             const {name, birthday, bio} = await getProfile();
             setNameInput(name);
             setBirthdayInput(birthday);
@@ -24,8 +25,10 @@ export default function ProfileForm({isEdit=false}) {
         
         try {
             if(isEdit){
+                // consider abstracting this out into a hook/context
                 await updateProfile(nameInput, user.email, bioInput, birthdayInput);
             } else {
+                // consider abstracting this out into a hook/context
                 await createProfile(nameInput, user.email, bioInput, birthdayInput);
             }
         } catch(err){

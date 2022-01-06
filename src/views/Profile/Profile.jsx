@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import ProfileForm from '../../components/Forms/ProfileForm.jsx'
+// consider abstracting this out into a hook/context
 import { getProfile } from '../../services/profile.js';
 
 export default function Profile() {
@@ -8,6 +8,7 @@ export default function Profile() {
     
     useEffect(async () => {
         try{
+            // consider abstracting this out into a hook/context
             const currentProfile = await getProfile();
             setProfile(currentProfile);
         } catch(err) {
