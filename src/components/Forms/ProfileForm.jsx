@@ -28,7 +28,7 @@ export default function ProfileForm({isEdit=false}) {
                 await createProfile(nameInput, user.email, bioInput, birthdayInput);
             }
         } catch(err){
-            console.log(err.message);
+            console.log(err);
         }
 
         history.push('/profile');

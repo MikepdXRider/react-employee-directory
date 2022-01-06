@@ -23,8 +23,8 @@ export default function AuthForm({isSigningUp=false}) {
                 setUser(currentUser);
                 history.replace('/profile');
             }
-        } catch(e) {
-            console.log(e.message);
+        } catch(err) {
+            console.log(err);
         }
     }
 
