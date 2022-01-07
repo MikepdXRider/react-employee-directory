@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth.jsx';
-
+import AuthForm from '../../components/Forms/AuthForm.jsx';
 
 export default function Auth({isSigningUp=false}) {
     const history = useHistory();
@@ -34,20 +34,14 @@ export default function Auth({isSigningUp=false}) {
         // This could be an abstracted into presentational component, but isn't being reused so it's not necessary.
         <fieldset>
             <legend>{isSigningUp ? 'Sign-Up' : 'Sign-In'}</legend>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" value={emailInput} onChange={(e) => setEmailInput(e.target.value)} required/>
-
-                <label htmlFor="password">Password</label>
-                <input type="password" id="password" value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} required/>
-
-                <input aria-label='submit form button' type="submit" />
-                
-                {
-                    error && <p>{error}</p>
-                }
-            </form>
+            <AuthForm 
+                emailInput={emailInput}    
+                setEmailInput={setEmailInput}    
+                passwordInput={passwordInput}    
+                setPasswordInput={setPasswordInput}    
+                error={error}    
+                handleSubmit={handleSubmit}    
+            />
         </fieldset>
-
     )
 }

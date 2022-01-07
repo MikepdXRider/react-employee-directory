@@ -27,6 +27,11 @@ function ProvideAuth({children}) {
         setUser({});
     }
 
+    // useMemo
+    // Offers performance optimization. prevents the whole app from rerendering when the context state changes.  
+    // pass state and functions
+
+
     return (
         <authContext.Provider value={{user, signUp, signIn, signOut}} >
             {children}
@@ -34,4 +39,4 @@ function ProvideAuth({children}) {
     )
 }
 
-export { authContext, ProvideAuth}
+export { authContext, ProvideAuth }

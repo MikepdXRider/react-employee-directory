@@ -1,6 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders layout 1`] = `
+exports[`renders layout w/ user 1`] = `
+<div>
+  <header>
+    <h1>
+      Acme Inc
+    </h1>
+    <span>
+      You are signed in as 
+      hi@test.com
+    </span>
+    <button>
+      Sign Out
+    </button>
+  </header>
+  <main />
+</div>
+`;
+
+exports[`renders layout w/o user 1`] = `
 <div>
   <header>
     <h1>

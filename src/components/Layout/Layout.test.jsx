@@ -6,9 +6,21 @@ import Layout from './Layout.jsx'
 // jest.mock('../../services/users.js');
 jest.mock('../../context/ProvideAuth.jsx');
 
-it('renders layout', () => {
+it('renders layout w/o user', () => {
     const {container} = render(
         <ProvideAuth>
+            <MemoryRouter>
+                <Layout />
+            </MemoryRouter>
+        </ProvideAuth>
+    )
+
+    expect(container).toMatchSnapshot();
+})
+
+it('renders layout w/ user', () => {
+    const {container} = render(
+        <ProvideAuth mockUser={{email: 'hi@test.com'}}>
             <MemoryRouter>
                 <Layout />
             </MemoryRouter>
