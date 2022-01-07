@@ -12,11 +12,15 @@ export default function SetProfile({isEdit=false}) {
 
     useEffect(async () => {
         if(isEdit){
-            // consider abstracting this out into a hook/context
-            const {name, birthday, bio} = await getProfile();
-            setNameInput(name);
-            setBirthdayInput(birthday);
-            setBioInput(bio);
+            try{
+                // consider abstracting this out into a hook/context
+                const {name, birthday, bio} = await getProfile();
+                setNameInput(name);
+                setBirthdayInput(birthday);
+                setBioInput(bio);
+            } catch(err) {
+                if(err.message === "JSON object requested, multiple (or no) rows returned") return history.push('/create-profile');
+            }
         }
     })
 
