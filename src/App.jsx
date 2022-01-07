@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ProvideAuth } from "./context/ProvideAuth.jsx";
 import Home from "./views/Home/Home.jsx";
-import Layout from "./views/Layout/Layout.jsx";
+import Layout from "./components/Layout/Layout.jsx";
 import Profile from "./views/Profile/Profile.jsx";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute.jsx";
 import Auth from "./views/Auth/Auth.jsx";

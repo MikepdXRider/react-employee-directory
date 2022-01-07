@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders layout 1`] = `
+<div>
+  <header>
+    <h1>
+      Acme Inc
+    </h1>
+    <button>
+      Sign In
+    </button>
+  </header>
+  <main />
+</div>
+`;
