@@ -10,19 +10,23 @@ export default function SetProfile({isEdit=false}) {
     const [birthdayInput, setBirthdayInput] = useState('');
     const [bioInput, setBioInput] = useState('');
 
-    useEffect(async () => {
-        if(isEdit){
-            try{
-                // consider abstracting this out into a hook/context
-                const {name, birthday, bio} = await getProfile();
-                setNameInput(name);
-                setBirthdayInput(birthday);
-                setBioInput(bio);
-            } catch(err) {
-                if(err.message === "JSON object requested, multiple (or no) rows returned") return history.push('/create-profile');
+    useEffect(() => {
+        async function effectHandler() {
+            if(isEdit){
+                try{
+                    // consider abstracting this out into a hook/context
+                    const {name, birthday, bio} = await getProfile();
+                    setNameInput(name);
+                    setBirthdayInput(birthday);
+                    setBioInput(bio);
+                } catch(err) {
+                    if(err.message === "JSON object requested, multiple (or no) rows returned") return history.push('/create-profile');
+                }
             }
         }
-    })
+
+        effectHandler();
+    }, []);
 
     async function handleSubmit(e){
         e.preventDefault();

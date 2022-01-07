@@ -11,16 +11,20 @@ export default function Profile() {
     const {user} = useAuth();
     const [isLoading, setIsLoading] = useState(true);
     
-    useEffect(async () => {
-        try{
-            // consider abstracting this out into a hook/context
-            const currentProfile = await getProfile();
-            setProfile(currentProfile);
-            setIsLoading(false);
-        } catch(err) {
-            if(err.message === "JSON object requested, multiple (or no) rows returned") return history.push('/create-profile');
+    useEffect(() => {
+        async function effectHandler(){
+            try{
+                // consider abstracting this out into a hook/context
+                const currentProfile = await getProfile();
+                setProfile(currentProfile);
+                setIsLoading(false);
+            } catch(err) {
+                if(err.message === "JSON object requested, multiple (or no) rows returned") return history.push('/create-profile');
+            }
         }
-    })
+
+        effectHandler();
+    }, []);
 
     return (
         <>
