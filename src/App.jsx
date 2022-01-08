@@ -9,31 +9,31 @@ import SetProfile from "./views/Profile/SetProfile.jsx";
 
 export default function App() {
   return (
-    <ProvideAuth>
-      <BrowserRouter>
-        <Layout>
-          <Switch>
-            <Route exact path='/'>
-                <Home/>
-            </Route>
-            <Route path='/login'>
-                <Auth />
-            </Route>
-            <Route path='/register'>
-                <Auth isSigningUp={true}/>
-            </Route>
-            <PrivateRoute path='/create-profile'>
-                <SetProfile />
-            </PrivateRoute>
-            <PrivateRoute path='/edit-profile'>
-                <SetProfile isEdit={true} />
-            </PrivateRoute>
-            <PrivateRoute path='/profile'>
-                <Profile/>
-            </PrivateRoute>
-          </Switch>
-        </Layout>
-      </BrowserRouter>
-    </ProvideAuth>  
+      <ProvideAuth>
+        <BrowserRouter>
+          <Layout>
+            <Switch>
+              <Route exact path='/'>
+                  <Home/>
+              </Route>
+              <Route path='/login'>
+                  <Auth />
+              </Route>
+              <Route path='/register'>
+                  <Auth isSigningUp={true}/>
+              </Route>
+              <PrivateRoute path='/create-profile'>
+                  <SetProfile />
+              </PrivateRoute>
+              <PrivateRoute path='/edit-profile'>
+                  <SetProfile isEdit={true} />
+              </PrivateRoute>
+              <PrivateRoute path='/profile'>
+                  <Profile/>
+              </PrivateRoute>
+            </Switch>
+          </Layout>
+        </BrowserRouter>
+      </ProvideAuth>  
   )
 }

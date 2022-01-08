@@ -1,6 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth.jsx';
+import styles from '../../App.css';
 
 export default function Layout({ children }) {
     const history = useHistory();
@@ -13,7 +14,7 @@ export default function Layout({ children }) {
 
     return (
         <>
-            <header>
+            <header className={styles.header}>
                 <h1>Acme Inc</h1>
                 {
                     user.email
