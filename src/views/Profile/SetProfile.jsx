@@ -23,6 +23,7 @@ export default function SetProfile({isEdit=false}) {
                     setBirthdayInput(birthday);
                     setBioInput(bio);
                 } catch(err) {
+                    console.log(err);
                     if(err.message === "JSON object requested, multiple (or no) rows returned") return history.push('/create-profile');
                 }
             }
@@ -34,13 +35,20 @@ export default function SetProfile({isEdit=false}) {
     async function handleSubmit(e){
         e.preventDefault();
         
+        const newProfile = {
+            name: nameInput,
+            email: user.email,
+            bio: bioInput,
+            birthday: birthdayInput
+        }
+
         try {
             if(isEdit){
                 // consider abstracting this out into a hook/context
-                await updateProfile(nameInput, user.email, bioInput, birthdayInput);
+                await updateProfile(newProfile);
             } else {
                 // consider abstracting this out into a hook/context
-                await createProfile(nameInput, user.email, bioInput, birthdayInput);
+                await createProfile(newProfile);
             }
         } catch(err){
             console.log(err);

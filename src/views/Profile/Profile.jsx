@@ -19,6 +19,7 @@ export default function Profile() {
                 setProfile(currentProfile);
                 setIsLoading(false);
             } catch(err) {
+                console.log(err);
                 if(err.message === "JSON object requested, multiple (or no) rows returned") return history.push('/create-profile');
             }
         }
