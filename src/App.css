@@ -1,6 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Ubuntu:wght@300&display=swap');
+
+/* font-family: 'Acme', sans-serif;
+font-family: 'Ubuntu', sans-serif; */
+
+/* https://zuzze.tech/blog/posts/glassmorphism-how-to-create-blurred-background-effect-in-figma-and-css */
+/* https://hype4.academy/tools/glassmorphism-generator */
 .header {
     display: flex;
     justify-content: space-between;
-    height: 100px;
+    height: 50px;
     width: 100%;
+    background: rgba( 255, 255, 255, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 8px );
+    -webkit-backdrop-filter: blur( 8px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    font-family: 'Acme', sans-serif;
+    align-self: center;
+    color:white;
+    margin-left: 50px;
+}
+
+button{
+    height: 30px;
+    width: 100px;
+    border: none;
+    color: white;
+    background-image: linear-gradient(90deg,#2ebf91,#8360c3);
+    border-radius: 10px;
+    font-size: large;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.glassMorphism{
+    background: rgba( 255, 255, 255, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 8px );
+    -webkit-backdrop-filter: blur( 8px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.loginStatus{
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-right: 7px;
+}
+
+.seperator{
+    background-image: linear-gradient(90deg,#2ebf91,#8360c3);
+    width: 1px;
+    height: 95%;
 }
