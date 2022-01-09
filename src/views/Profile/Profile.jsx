@@ -4,6 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth.jsx';
 // consider abstracting this out into a hook/context
 import { getProfile } from '../../services/profile.js';
+import styles from '../../App.css'
 
 export default function Profile() {
     const history = useHistory();
@@ -32,7 +33,7 @@ export default function Profile() {
             {
                 isLoading 
                 ? <h1>Loading</h1>
-                : <article>
+                : <article className={styles.glass}>
                     <h1>{profile.name}</h1>
                     <p>{user.email}</p>
                     <p>Birthday: {profile.birthday}</p>
