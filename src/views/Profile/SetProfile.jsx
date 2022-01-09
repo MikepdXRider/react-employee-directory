@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 import ProfileForm from '../../components/Forms/ProfileForm.jsx';
 import useAuth from '../../hooks/useAuth.jsx'
 import { createProfile, getProfile, updateProfile } from '../../services/profile.js';
+import styles from '../../App.css'
+import profileStyles from './Profile.css'
 
 export default function SetProfile({isEdit=false}) {
     const history = useHistory();
@@ -48,7 +50,7 @@ export default function SetProfile({isEdit=false}) {
     }
 
     return (
-        <fieldset>
+        <fieldset className={styles.glass}>
             <legend>{isEdit ? 'Edit Profile' : 'Create Profile'}</legend>
             <ProfileForm 
                 user={user}
