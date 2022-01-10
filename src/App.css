@@ -51,8 +51,14 @@ h1 {
     height: 95%;
 }
 
-button{
-    height: 30px;
+.horizontalSeperator{
+    background-image: linear-gradient(90deg,#2ebf91,#8360c3);
+    height: 1px;
+    width: 95%;
+}
+
+button, a{
+    min-height: 30px;
     width: 100px;
     border: none;
     color: white;
@@ -60,6 +66,13 @@ button{
     border-radius: 10px;
     font-size: large;
     font-family: 'Ubuntu', sans-serif;
+    padding: 0;
+    display: inline-block;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 button:hover{
@@ -71,6 +84,7 @@ main{
     height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 
@@ -117,3 +131,32 @@ input:focus{
     margin-top: 10px;
 }
 
+section{
+    height: 35%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.linkContainer{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+article{
+    color: white;
+    width: 50%;
+}
+
+h3{
+    text-align: center;
+}
+
+.flexRow{
+    display: flex;
+}
