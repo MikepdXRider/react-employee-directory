@@ -2,17 +2,28 @@
 
 exports[`renders layout w/ user 1`] = `
 <div>
-  <header>
+  <header
+    class="header"
+  >
     <h1>
-      Acme Inc
+      Acme Inc.
     </h1>
-    <span>
-      You are signed in as 
-      hi@test.com
-    </span>
-    <button>
-      Sign Out
-    </button>
+    <div
+      class="loginStatus"
+    >
+      <span>
+        Signed in as 
+        <b>
+          hi@test.com
+        </b>
+      </span>
+      <div
+        class="seperator"
+      />
+      <button>
+        Sign Out
+      </button>
+    </div>
   </header>
   <main />
 </div>
@@ -20,13 +31,25 @@ exports[`renders layout w/ user 1`] = `
 
 exports[`renders layout w/o user 1`] = `
 <div>
-  <header>
+  <header
+    class="header"
+  >
     <h1>
-      Acme Inc
+      Acme Inc.
     </h1>
-    <button>
-      Sign In
-    </button>
+    <div
+      class="loginStatus"
+    >
+      <span>
+        No account detected
+      </span>
+      <div
+        class="seperator"
+      />
+      <button>
+        Sign In
+      </button>
+    </div>
   </header>
   <main />
 </div>
