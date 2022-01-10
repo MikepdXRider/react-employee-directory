@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ProfileForm 1`] = `
+<div>
+  <form>
+    <label
+      for="name"
+    >
+      Name
+    </label>
+    <input
+      id="name"
+      type="text"
+      value=""
+    />
+    <label
+      for="email"
+    >
+      Email
+    </label>
+    <input
+      disabled=""
+      id="email"
+      type="text"
+      value="test@test.com"
+    />
+    <label
+      for="birthday"
+    >
+      Birthday
+    </label>
+    <input
+      id="birthday"
+      type="date"
+      value=""
+    />
+    <label
+      for="bio"
+    >
+      Tell us about yourself
+    </label>
+    <textarea
+      id="bio"
+    />
+    <button
+      class="formButton"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;

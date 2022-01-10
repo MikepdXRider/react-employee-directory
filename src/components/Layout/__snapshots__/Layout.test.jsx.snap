@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders layout w/ user 1`] = `
+<div>
+  <header
+    class="header"
+  >
+    <h1>
+      Acme Inc.
+    </h1>
+    <div
+      class="loginStatus"
+    >
+      <span>
+        Signed in as 
+        <b>
+          hi@test.com
+        </b>
+      </span>
+      <div
+        class="seperator"
+      />
+      <button>
+        Sign Out
+      </button>
+    </div>
+  </header>
+  <main />
+</div>
+`;
+
+exports[`renders layout w/o user 1`] = `
+<div>
+  <header
+    class="header"
+  >
+    <h1>
+      Acme Inc.
+    </h1>
+    <div
+      class="loginStatus"
+    >
+      <span>
+        No account detected
+      </span>
+      <div
+        class="seperator"
+      />
+      <button>
+        Sign In
+      </button>
+    </div>
+  </header>
+  <main />
+</div>
+`;

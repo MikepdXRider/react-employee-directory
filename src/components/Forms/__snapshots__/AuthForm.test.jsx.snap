@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders AuthForm 1`] = `
+<div>
+  <form>
+    <label
+      for="email"
+    >
+      Email
+    </label>
+    <input
+      id="email"
+      required=""
+      type="email"
+      value=""
+    />
+    <label
+      for="password"
+    >
+      Password
+    </label>
+    <input
+      id="password"
+      required=""
+      type="password"
+      value=""
+    />
+    <button
+      class="formButton"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
