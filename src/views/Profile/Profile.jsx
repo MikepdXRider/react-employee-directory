@@ -4,6 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth.jsx';
 // consider abstracting this out into a hook/context
 import { getProfile } from '../../services/profile.js';
+import styles from '../../App.css'
 
 export default function Profile() {
     const history = useHistory();
@@ -19,6 +20,7 @@ export default function Profile() {
                 setProfile(currentProfile);
                 setIsLoading(false);
             } catch(err) {
+                console.log(err);
                 if(err.message === "JSON object requested, multiple (or no) rows returned") return history.push('/create-profile');
             }
         }
@@ -31,12 +33,18 @@ export default function Profile() {
             {
                 isLoading 
                 ? <h1>Loading</h1>
-                : <article>
-                    <h1>{profile.name}</h1>
-                    <p>{user.email}</p>
-                    <p>Birthday: {profile.birthday}</p>
-                    <h5>{profile.bio}</h5>
-                    <Link to='/edit-profile'>Edit</Link>
+                : <article className={styles.glass}>
+                    <h3>{profile.name}</h3>
+                    <div className={styles.flexRow}>
+                        <div className={styles.divFifty}>
+                            <p><b>Email:</b> {user.email}</p>
+                            <p><b>Birthday:</b> {profile.birthday}</p>
+                        </div>
+                        <div className={styles.divFifty}>
+                            <p><b>Bio:</b> {profile.bio}</p>
+                        </div>
+                    </div>    
+                        <Link to='/edit-profile'>Edit</Link>
                 </article>
             }
         </>

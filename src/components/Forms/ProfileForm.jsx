@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from '../../App.css'
 
 export default function ProfileForm({user, nameInput, setNameInput, birthdayInput, setBirthdayInput, bioInput, setBioInput, handleSubmit}) {
     
@@ -16,7 +17,8 @@ export default function ProfileForm({user, nameInput, setNameInput, birthdayInpu
             <label htmlFor="bio">Tell us about yourself</label>
             <textarea id='bio' value={bioInput} onChange={(e) => setBioInput(e.target.value)} />
 
-            <input aria-label='submit form button' type="submit" />
+            {/* <input aria-label='submit form button' type="submit" /> */}
+            <button className={styles.formButton}>Submit</button>
         </form>
     )
 }

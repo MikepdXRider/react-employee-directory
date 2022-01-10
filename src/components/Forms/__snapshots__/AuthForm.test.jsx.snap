@@ -25,10 +25,11 @@ exports[`renders AuthForm 1`] = `
       type="password"
       value=""
     />
-    <input
-      aria-label="submit form button"
-      type="submit"
-    />
+    <button
+      class="formButton"
+    >
+      Submit
+    </button>
   </form>
 </div>
 `;

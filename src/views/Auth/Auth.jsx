@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth.jsx';
 import AuthForm from '../../components/Forms/AuthForm.jsx';
+import styles from '../../App.css'
 
 export default function Auth({isSigningUp=false}) {
     const history = useHistory();
@@ -32,7 +33,7 @@ export default function Auth({isSigningUp=false}) {
 
     return (
         // This could be an abstracted into presentational component, but isn't being reused so it's not necessary.
-        <fieldset>
+        <fieldset className={`${styles.glass} ${styles.profileFieldset}`}>
             <legend>{isSigningUp ? 'Sign-Up' : 'Sign-In'}</legend>
             <AuthForm 
                 emailInput={emailInput}    
